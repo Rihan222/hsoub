@@ -1,0 +1,48 @@
+@use "./variables" as *;
+
+// Reset and Base Styles
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Almarai", sans-serif;
+}
+
+// Common Navigation Styles
+nav {
+    .navbar-collapse {
+        form button {
+            color: $color-white !important;
+            border: 2px solid $color-white !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease-in-out !important;
+            background-color: $bg-btn-dark !important;
+            
+            &:hover {
+                background-color: $color-white !important;
+                color: $color-primary !important;
+                border: 2px solid $color-primary !important;
+            }
+        }
+        
+        form .sign {
+            color: $color-secondary !important;
+            border: 2px solid $color-secondary !important;
+            
+            &:hover {
+                color: $color-secondary !important;
+                border: 2px solid $color-secondary !important;
+            }
+        }
+    }
+    
+    span {
+        font-weight: 900;
+        font-size: 40px;
+        color: $color-white;
+        font-family: "Reem Kufi Fun", sans-serif;
+    }
+}
