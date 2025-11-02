@@ -25,6 +25,14 @@ nav {
     font-family: "Reem Kufi Fun", sans-serif;
     
   }
+   @media (max-width: 768px){
+      span{
+        font-size: 30px;
+      }
+      img{
+        width: 50px !important;
+      }
+    }
   
 
   .navbar-collapse {

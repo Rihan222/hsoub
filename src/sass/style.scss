@@ -12,6 +12,11 @@ header {
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
+  .navbar-toggler{
+    span{
+      font-size: 30px;
+    }
+  }
 
   nav {
     background-color: rgba(35, 34, 34, 0.37);
@@ -29,6 +34,15 @@ header {
       color: $color-white;
       font-family: "Reem Kufi Fun", sans-serif;
     }
+    @media (max-width: 768px){
+      span{
+        font-size: 30px;
+      }
+      img{
+        width: 50px !important;
+      }
+    }
+    
 
     ul {
       li {
