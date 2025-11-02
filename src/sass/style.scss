@@ -1,238 +1,247 @@
 @use "./variables" as *;
-@use "./common" as *;
-@use "./animations" as *;
-header{
-    background-image: url(../image/luca-bravo-O453M2Liufs-unsplash.jpg);
-    background-color: rgba(0, 0, 0, 0.495);
-    background-attachment: fixed;
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    width: 100%;
-    min-height: 100vh;
-  
-  nav{
-    background-color: rgba(35, 34, 34, 0.37);
-       transition: background-color 0.5s ease-in-out;
+@use "./mixins" as *;
 
+
+header {
+  background-image: url(../image/luca-bravo-O453M2Liufs-unsplash.jpg);
+  background-color: rgba(0, 0, 0, 0.495);
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+
+  nav {
+    background-color: rgba(35, 34, 34, 0.37);
+    transition: background-color 0.5s ease-in-out;
 
     &.scrolled {
       background-color: rgba(35, 34, 34, 0.708);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.06);
     }
 
-         span{
-        font-weight: 900;
-        font-size: 40px;
-        color: $color-white;
-        font-family: "Reem Kufi Fun", sans-serif;
-   }
-    ul li a{
-    color: $color-white !important;
-    font-size: 20px !important;
-    padding: 10px 15px !important;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out !important;
-    
-   }
-    ul li a:hover{
-        background-color: $color-white ;
-        color: $color-primary !important;
-     }
-      form button{
-        color: $color-white !important;
-        border: 2px solid $color-white !important;
-        font-weight: bold !important;
-        transition: all 0.3s ease-in-out !important;
-        background-color: $bg-btn-dark !important;
-        a{
-          color: $color-white ;
-          text-decoration: none;
+    span {
+      font-weight: 900;
+      font-size: 40px;
+      color: $color-white;
+      font-family: "Reem Kufi Fun", sans-serif;
+    }
+
+    ul {
+      li {
+        a {
+          color: $color-white !important;
+          font-size: 20px !important;
+          padding: 10px 15px !important;
+          border-radius: 10px;
+          transition: all 0.3s ease-in-out !important;
+
+          &:hover {
+            background-color: $color-white;
+            color: $color-primary !important;
+          }
         }
-        
-     }
-     
-       form button:hover{
-        color: $color-primary !important;
-        border: 2px solid $color-primary !important;
       }
-      form .sign{
-        a{
+    }
+
+    form {
+      button {
+  @include button($bg-btn-dark, #ffffff, );
+  &:hover a{
+    color: $color-primary !important;
+  } 
+      }
+
+      .sign {
+        border: 2px solid $color-secondary !important;
+
+        a {
           color: $color-secondary !important;
         }
-            
-            border: 2px solid $color-secondary !important;
-           
-        }
-         form .sign:hover{
-                 color: $color-secondary !important;
-                 border: 2px solid $color-secondary !important;
-                 
-            }
-    }
-    .hero{
-        color: $color-white ;
-        width: 100%;
-       min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h1{
-            font-size: 60px;
-            font-weight: bold;
-           margin-bottom: 40px;
-           
 
+        &:hover{
+          color: $color-secondary !important;
+          border: 2px solid $color-secondary !important;
         }
-        p{
-            font-size: 30px;
-            width: 50%;
-            text-align: center;
-            margin-bottom: 30px;
+        &:hover a {
+          color: $color-secondary !important;
         }
-        div button{
-         margin-left: 20px;
-         font-size: 20px;
-         color: $color-white !important;
-        border: 2px solid $color-white !important;
-        font-weight: bold !important;
-        transition: all 0.3s ease-in-out !important;
-        background-color: rgba(62, 61, 27, 0.307) !important;
-        }
-        div button:hover{
-            background-color: $color-white !important;
-        color: $color-primary !important;
-        border: 2px solid $color-primary !important;
-        }
+      }
     }
-  
-}
-.service-bg{
-    width: 100%;
-    background-color: #f2f3f5;
-    padding: 0px 0px 100px 0px;
-}
-.services{
+  }
+
+  .hero {
+    color: $color-white;
     width: 100%;
     min-height: 100vh;
-    padding: 50px 10px;
-   
-    h1{
-        text-align: center;
-        font-size: 50px;
-        font-weight: bold;
-       margin-bottom: 30px;
-       
-    }
-    .card{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        img{
-            width: 150px;
-        }
-        h5{
-            font-size: 30px ;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        p{
-            text-align: center;
-            font-size: 20px;
-            font-weight: 400;
-        }
-        
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 40px;
     }
-    .card:hover{
-            transform: scale(0.9);
-        }
+
+    p {
+      font-size: 30px;
+      width: 50%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    div {
+      button {
+  @include button($bg-btn-dark, #ffffff, );
+      }
+    }
+  }
 }
-.back {
+@media (max-width: 768px){
+  header{
+    .hero{
+    h1{
+      font-size: 37px;
+    }
+    p{
+      font-size: 19px;
+      width: 90%;
+    }
+  }
+  }
   
-     width: 100%;
-     min-height: 100vh;
-     background-image: url(../image/350c8f10-e312-4ce5-9ed8-521cda2111fd.jpg);
-     background-attachment: fixed;
-     background-blend-mode: overlay;
-     background-size: cover;
-     background-position: center;
-     overflow: hidden;
-    
+}
 
-    .trips{
+
+
+.service-bg {
+  width: 100%;
+  background-color: #f2f3f5;
+  padding: 0 0 100px 0;
+}
+
+.services {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 10px;
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    img {
+      width: 150px;
+    }
+
+    h5 {
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}
+
+
+.back {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../image/350c8f10-e312-4ce5-9ed8-521cda2111fd.jpg);
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  .trips {
     width: 100%;
     min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    h1{
-        text-align: center;
-        font-size: 50px;
-        font-weight: bold;
-        padding-bottom: 80px;
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+      padding-bottom: 80px;
     }
-   
-      .col-12 .card {
-        overflow: hidden; 
+
+    .col-12 {
+      .card {
+        overflow: hidden;
+
         .card-img {
-        transition: transform 0.5s ease-in-out; 
-        
-}
-      .card-img-overlay .btn {
-        opacity: 0; 
-        transform: translateY(20px); 
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
-        position: absolute; 
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 0); 
-        transform: translate(-50%, -50%); 
-        font-size: 24px;
-        font-weight: bold;
-        color: $color-white !important;
-        border: 2px solid $color-white !important;
-        font-weight: bold !important;
-        transition: all 0.3s ease-in-out !important;
-        background-color: $bg-btn-dark !important;
+          transition: transform 0.5s ease-in-out;
+        }
 
-}
-      .card-img-overlay .btn:hover{
-       background-color: $color-white !important;
-        color: $color-primary !important;
-        border: 2px solid $color-primary !important;
+        .card-img-overlay {
+          .btn {
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+              @include button($bg-btn-dark, #ffffff, );
 
-        
-}
-       .card-img-overlay h5 {
-          opacity: 1;
-          font-size: 27px;
-          transition: opacity 0.3s ease-in-out;
-}
+
+           
+          }
+
+          h5 {
+            opacity: 1;
+            font-size: 27px;
+            transition: opacity 0.3s ease-in-out;
+          }
+        }
+
+        &:hover {
+          .card-img {
+            transform: scale(1.1);
+            filter: blur(3px);
+          }
+
+          .card-img-overlay {
+            .btn {
+              opacity: 1;
+            }
+
+            h5 {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-      .col-12 .card:hover .card-img {
-        transform: scale(1.1); 
-        filter: blur(3px); 
-}
-
-      .col-12 .card:hover .card-img-overlay .btn {
-        opacity: 1; 
-        transform: translate(-50%, -50%); 
-}
-
-      .col-12 .card:hover .card-img-overlay h5 {
-          opacity: 0; 
-} 
-}
-   
-}
 
 .contact-section {
   padding: 4rem 0;
@@ -277,15 +286,7 @@ header{
       margin-bottom: 1.5rem;
       position: relative;
 
-      &::after {
-        content: "";
-        display: block;
-        width: 60px;
-        height: 4px;
-        background-color: $color-dark-green;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-      }
+   
     }
 
     .list-group {
@@ -325,21 +326,24 @@ header{
       }
 
       .list-group-item {
-        justify-content: center;
+        justify-content: start;
       }
     }
   }
 }
-footer{
-    background-color: $color-black-text;
-    color: $color-white;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p{
-        font-size: 20px ;
-        margin: 0;
-    }
+
+
+footer {
+  background-color: $color-black-text;
+  color: $color-white;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
 }

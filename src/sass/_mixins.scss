@@ -1,0 +1,30 @@
+@use "./variables" as *;
+
+
+@mixin button($bg-btn-dark,$color-white , ){
+    background-color: $bg-btn-dark !important;
+    color: $color-white;
+    border: 2px solid $color-white !important;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin: 0px 5px !important;
+             a{
+                text-decoration: none ;
+                color: $color-white;
+                    transition: all 0.4s ease-in-out !important;
+
+             } 
+
+
+   transition: all 0.4s ease-in-out !important;
+   &:hover{
+    background-color: $color-white !important;
+    color: $color-primary !important;
+    border: 2px solid $color-primary !important;
+   }
+   &:hover a {
+    color: $color-primary !important;
+   }
+}

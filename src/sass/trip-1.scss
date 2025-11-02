@@ -1,134 +1,190 @@
 @use "bootstrap";
 @use "./variables" as *;
+@use "./mixins" as *;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-     font-family: "Almarai", sans-serif;
+
+body {
+  font-family: "Almarai", sans-serif;
 }
-nav{
-   background-color: rgba(35, 34, 34, 0.37);
+
+nav {
+  background-color: rgba(35, 34, 34, 0.37);
   transition: background-color 0.5s ease-in-out;
 
-   &.scrolled {
-      background-color: rgba(35, 34, 34, 0.708);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-    }
-     span{
-        font-weight: 900;
-        font-size: 40px;
-        color: $color-white;
-        font-family: "Reem Kufi Fun", sans-serif;}
-     .navbar-collapse{
-         display: flex;
-        justify-content: end;
-        align-items: center;
-    form button{
-        color: $color-white !important;
-        border: 2px solid $color-white !important;
-        font-weight: bold !important;
-        transition: all 0.3s ease-in-out !important;
-        background-color: $bg-btn-dark !important;
-     }
-      form button:hover{
-        background-color: $color-white !important;
-        color: $color-primary !important;
-        border: 2px solid $color-primary !important;
+  &.scrolled {
+    background-color: rgba(35, 34, 34, 0.708);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  }
+
+  span {
+    font-weight: 900;
+    font-size: 40px;
+    color: $color-white;
+    font-family: "Reem Kufi Fun", sans-serif;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+      form {
+      button {
+  @include button($bg-btn-dark, #ffffff, );
+  &:hover a{
+    color: $color-primary !important;
+  } 
       }
-      form .sign{
-            color: $color-secondary !important;
-            border: 2px solid $color-secondary !important;
-           
+
+      .sign {
+        border: 2px solid $color-secondary !important;
+
+        a {
+          color: $color-secondary !important;
         }
-         form .sign:hover{
-                 color: $color-secondary !important;
-                 border: 2px solid $color-secondary !important;
-                 
-            }
+
+        &:hover{
+          color: $color-secondary !important;
+          border: 2px solid $color-secondary !important;
+        }
+        &:hover a {
+          color: $color-secondary !important;
+        }
+      }
+    }
   }
 }
-header img{
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-  border-bottom: 2px solid rgb(69, 65, 65);
-  border-radius: 0 0 50px 50px;
-  filter: blur(3px);
-  box-shadow: 0 20px 15px rgba(0, 0, 0, 0.411);
+
+header {
   position: relative;
-  
-}
-.text{
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.614));
+
+
+  img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    border-bottom: 2px solid rgb(69, 65, 65);
+    filter: blur(3px);
+    position: relative;
+  }
+
+  .text {
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: $color-white;
-    h1{
-     font-size: 50px;
-     font-weight: bold;
-     margin-bottom: 30px;
-     text-shadow: 2px 2px 5px #000000;
+    max-width: 90%;
 
-    }
-    p{
-      font-size: 25px;
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 30px;
       text-shadow: 2px 2px 5px #000000;
     }
 
-  }
-  .trip{
-    width: 100%;
-    padding: 40px 5px;
-    h2{
-      font-size: 35px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 40px;
-
+    p {
+      font-size: 25px;
+      text-shadow: 2px 2px 5px #000000;
     }
-    .card-img-overlay .img-text{
+  }
+}
+.alt{
+  background: url(../image/350c8f10-e312-4ce5-9ed8-521cda2111fd.jpg);
+   background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+   width: 100%;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  header {
+    img {
+      height: 60vh;
+    }
+
+    .text {
+      max-width: 95%;
+      font-size: 14px;
+      padding: 10px;
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 19px;
+        
+      }
+    }
+  }
+}
+
+.trip {
+  width: 100%;
+  padding: 40px 5px;
+
+  h2 {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .card-img-overlay {
+    .img-text {
       background-color: #00000033;
       text-align: center;
       border-radius: 20px;
       padding: 10px;
-      h5{
-       font-size: 25px;
-       text-shadow: 2px 2px 5px #00000074;
+
+      h5 {
+        font-size: 25px;
+        text-shadow: 2px 2px 5px #00000074;
       }
-      p{
+
+      p {
         font-size: 16px;
         text-shadow: 2px 2px 5px #00000074;
       }
     }
-    .hov{
-      transition: all 0.3s ease-in-out;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.261) ;
-
-    }
-    .hov:hover{
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.467) ;
-    }
   }
 
-  
-  footer{
-    background-color: $color-black-text;
-    color: $color-white;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p{
-        font-size: 20px ;
-        margin: 0;
+  .hov {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.261);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.467);
     }
+  }
+}
+
+footer {
+  background-color: $color-black-text;
+  color: $color-white;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
 }
