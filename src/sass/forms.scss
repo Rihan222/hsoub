@@ -69,7 +69,7 @@ nav {
   }
 }
 
-// صندوق تسجيل الدخول
+
 .wrapper {
   max-width: 350px;
   min-height: 500px;
@@ -160,7 +160,7 @@ nav {
   }
 }
 
-// البطاقات
+
 .card {
   background-color: $bg-btn-dark;
   border-radius: 1rem;
@@ -182,7 +182,7 @@ nav {
   }
 }
 
-// الفوتر
+
 footer {
   background-color: $color-black-text;
   color: $color-white;
@@ -191,8 +191,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  margin-top: 50px;
+  position: relative; 
   bottom: 0;
+
 
   p {
     font-size: 20px;
@@ -200,7 +202,6 @@ footer {
   }
 }
 
-// الميديا
 @media (max-width: 380px) {
   .wrapper {
     margin: 30px 20px;

@@ -121,7 +121,13 @@ header {
   background-position: center;
   overflow: hidden;
    width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
+  h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 70px 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -154,48 +160,36 @@ header {
   }
 }
 
-.trip {
-  width: 100%;
-  padding: 40px 5px;
+.custom-carousel {
+  margin-top: 30px; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  margin: 50px 0px 70px 0px;
+  max-height: 50vh; 
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.614));
 
-  h2 {
-    font-size: 35px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
+  img {
+    height: 50vh; // نفس ارتفاع الكاروسيل
+    object-fit: cover; // يخلي الصورة ما تتمطط
   }
 
-  .card-img-overlay {
-    .img-text {
-      background-color: #00000033;
-      text-align: center;
-      border-radius: 20px;
-      padding: 10px;
-
-      h5 {
-        font-size: 25px;
-        text-shadow: 2px 2px 5px #00000074;
-      }
-
-      p {
-        font-size: 16px;
-        text-shadow: 2px 2px 5px #00000074;
-      }
+  .carousel-caption {
+    h5{
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #00000084;
     }
-  }
-
-  .hov {
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.261);
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.467);
+    p{
+      font-size: 18px;
+      text-shadow: 2px 2px 5px #00000084;
     }
+    background-color: rgba(255, 255, 255, 0.459); // خلفية شبه شفافة
+    color: #000; // النص أسود
+    border-radius: 10px;
+    padding: 10px 15px;
   }
 }
+
 
 footer {
   background-color: $color-black-text;
