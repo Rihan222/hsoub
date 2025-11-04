@@ -13,8 +13,13 @@ body {
   font-family: "Almarai", sans-serif;
   background: url("../image/350c8f10-e312-4ce5-9ed8-521cda2111fd.jpg") center/cover no-repeat;
 }
+@media (max-width: 768px) { 
+  body {
+    padding-bottom: 270px; 
+  }
+}
 
-// شريط التنقل
+
 nav {
   background-color: $bg-btn-dark;
    
@@ -184,16 +189,19 @@ nav {
 
 
 footer {
-  background-color: $color-black-text;
-  color: $color-white;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  position: relative; 
-  bottom: 0;
+background-color: $color-black-text;
+color: $color-white;
+width: 100%;
+height: 70px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 50px;
+position: fixed;
+left: 0;
+bottom: 0;
+z-index: 1000;
+
 
 
   p {
