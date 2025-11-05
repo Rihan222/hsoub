@@ -1,7 +1,6 @@
 @use "bootstrap";
 @use "./variables" as *;
 
-// الإعدادات العامة
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +12,7 @@ body {
   font-family: "Almarai", sans-serif;
   background: url("../image/350c8f10-e312-4ce5-9ed8-521cda2111fd.jpg") center/cover no-repeat;
 }
-@media (max-width: 768px) { 
-  body {
-    padding-bottom: 270px; 
-  }
-}
+
 
 
 nav {

@@ -1,3 +1,10 @@
-// Trip page JS entry: only includes helpers needed for trip pages
-// Keep this small so trip pages don't load the full index bundle
 require('./jquery-helpers');
+
+document.addEventListener("DOMContentLoaded", function () {
+    const myCarousel = document.querySelector('#carouselExampleCaptions');
+
+    const carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 3000,
+        ride: 'carousel'
+    });
+});
